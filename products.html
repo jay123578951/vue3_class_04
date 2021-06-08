@@ -66,7 +66,7 @@
             </tr>
           </tbody>
         </table>
-        <p>目前有 <span id="productCount">0</span> 項產品</p>
+        <p>目前有 <span id="productCount">{{ products.length }}</span> 項產品</p>
         <pagination
           :pages="pagination"
           @get-product="getProducts">
@@ -74,11 +74,13 @@
       </div>
       <!-- Modal -->
       <product-modal
+        ref="updateProductModal"
         :temp-product="tempProduct"
         @update-product="updateProduct">
       </product-modal>
       <!-- Modal -->
       <del-product-modal
+        ref="deleteProductModal"
         :temp-product="tempProduct"
         @delete-product="deleteProduct">
       </del-product-modal>

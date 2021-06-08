@@ -1,10 +1,11 @@
 import { createApp } from 'https://cdnjs.cloudflare.com/ajax/libs/vue/3.0.9/vue.esm-browser.js';
 
+const apiUrl = 'https://vue3-course-api.hexschool.io';
+const apiPath = 'jay0303597';
+
 const app = createApp({
   data() {
     return {
-      url: 'https://vue3-course-api.hexschool.io',
-      path: 'jay0303597',
       user: {
         username: '',
         password: ''
@@ -15,7 +16,7 @@ const app = createApp({
     login(e) {
       e.preventDefault();
 
-      axios.post(`${this.url}/admin/signin`, this.user)
+      axios.post(`${apiUrl}/admin/signin`, this.user)
         .then((res) => {
           if (res.data.success) {
             const token = res.data.token;
